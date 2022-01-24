@@ -4,14 +4,14 @@ spring:
   h2:
     console:
       enabled: true
-      path: /gadget-console
+      path: /hotpeppers-console
       settings:
         trace: false
         web-allow-others: false
   datasource:
-    url: jdbc:h2:mem:gadget-db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-    username: gadgetadmin
-    password: gadgetpwd
+    url: jdbc:h2:mem:hotpeppers-db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: hotpeppersadmin
+    password: hotpepperspwd
   jpa:
     show-sql: true
     hibernate:

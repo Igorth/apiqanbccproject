@@ -7,14 +7,15 @@ import javax.persistence.Id
 import javax.persistence.Table
 
 @Entity
-@Table(name = "GADGET")
-data class Gadget(
+@Table(name = "HotPeppers")
+data class HotPeppers(
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    val gadgetId : Long,
-    val gadgetName : String,
-    val gadgetCategory : String?,
-    val gagdetAvailability : Boolean = true,
-    val gadgetPrice : Double
+    val id : Long,
+    val brandName : String,
+    val sauceName : String?,
+    val description : String,
+    val url : String,
+    val heat : String
 )
