@@ -4,10 +4,8 @@ import com.igordiasth.apiqanbcc.model.HotPeppers
 import com.igordiasth.apiqanbcc.repository.HotPeppersRepository
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RequestParam
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
+import java.util.*
 
 @RestController
 @RequestMapping("/api/hotpeppers")
@@ -27,4 +25,13 @@ class HotPeppersController(private val hotPeppersRepository: HotPeppersRepositor
 
     @GetMapping("/count")
     fun getCount(): ResponseEntity<Long> = ResponseEntity(hotPeppersRepository.count(), HttpStatus.OK)
+
+    @GetMapping("/{id}")
+    fun getHotSauce(@PathVariable id: Long): ResponseEntity<Optional<HotPeppers>> {
+        if (hotPeppersRepository.existsById(id)){
+            return ResponseEntity(hotPeppersRepository.findById(id), HttpStatus.OK)
+        } else {
+            return ResponseEntity(HttpStatus.NOT_FOUND)
+        }
+    }
 }
