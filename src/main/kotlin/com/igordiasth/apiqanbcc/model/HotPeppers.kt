@@ -9,11 +9,11 @@ data class HotPeppers(
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     val id : Long = 0,
-    val brandName : String = "",
-    val sauceName : String = "",
+    var brandName : String = "",
+    var sauceName : String = "",
     @Lob
-    val description : String = "",
+    var description : String = "",
     @Lob
-    val url : String,
-    val heat : Int = 0
+    var url : String,
+    var heat : Int = 0
 )
