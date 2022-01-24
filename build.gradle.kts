@@ -34,9 +34,6 @@ dependencies {
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 
-//	// https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui
-//	implementation("org.springdoc:springdoc-openapi-ui:1.6.4")
-
 	implementation("io.springfox:springfox-swagger-ui:2.9.2")
 	implementation("io.springfox:springfox-swagger2:2.9.2")
 
