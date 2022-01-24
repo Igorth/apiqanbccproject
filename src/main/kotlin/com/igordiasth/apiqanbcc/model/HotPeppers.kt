@@ -14,6 +14,6 @@ data class HotPeppers(
     @Lob
     var description : String = "",
     @Lob
-    var url : String,
+    var url : String = "",
     var heat : Int = 0
 )
