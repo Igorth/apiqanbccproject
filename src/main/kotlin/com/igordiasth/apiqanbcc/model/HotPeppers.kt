@@ -1,10 +1,6 @@
 package com.igordiasth.apiqanbcc.model
 
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
-import javax.persistence.Table
+import javax.persistence.*
 
 @Entity
 @Table(name = "HotPeppers")
@@ -12,10 +8,12 @@ data class HotPeppers(
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    val id : Long,
-    val brandName : String,
-    val sauceName : String?,
-    val description : String,
+    val id : Long = 0,
+    val brandName : String = "",
+    val sauceName : String = "",
+    @Lob
+    val description : String = "",
+    @Lob
     val url : String,
-    val heat : String
+    val heat : Int = 0
 )
