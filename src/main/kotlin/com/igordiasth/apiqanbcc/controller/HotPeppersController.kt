@@ -55,4 +55,20 @@ class HotPeppersController(private val hotPeppersRepository: HotPeppersRepositor
             ResponseEntity(hotPeppersRepository.save(updatedHotPeppers), HttpStatus.OK)
         }.orElse(ResponseEntity<HotPeppers>(HttpStatus.INTERNAL_SERVER_ERROR))
     }
+
+    @DeleteMapping("/hotpeppers/{id}")
+    fun deleteHotPeppers(@PathVariable id: Long): ResponseEntity<HotPeppers?> {
+        if (hotPeppersRepository.existsById(id)){
+            hotPeppersRepository.deleteById(id)
+            return ResponseEntity(HttpStatus.NO_CONTENT)
+        }else {
+            return ResponseEntity(HttpStatus.NOT_FOUND)
+        }
+    }
+
+    @DeleteMapping("/hotpeppers")
+    fun removeHotPeppers(): ResponseEntity<Void> {
+        hotPeppersRepository.deleteAll()
+        return ResponseEntity<Void>(HttpStatus.OK)
+    }
 }
