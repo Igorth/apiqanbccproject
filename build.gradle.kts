@@ -37,6 +37,11 @@ dependencies {
 	implementation("io.springfox:springfox-swagger-ui:2.9.2")
 	implementation("io.springfox:springfox-swagger2:2.9.2")
 
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
+	implementation("org.springframework.boot:spring-boot-starter-security:2.6.3")
+
+	// https://mvnrepository.com/artifact/org.springframework.security/spring-security-test
+	testImplementation("org.springframework.security:spring-security-test:5.6.1")
 }
 
 tasks.withType<KotlinCompile> {

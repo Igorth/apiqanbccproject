@@ -20,6 +20,7 @@ class HotPeppersController(private val hotPeppersRepository: HotPeppersRepositor
         if (hotPeppers.isEmpty()) {
             return ResponseEntity<List<HotPeppers>>(HttpStatus.NO_CONTENT)
         }
+        System.out.println("GET ALL HOTSAUCES")
         return ResponseEntity<List<HotPeppers>>(hotPeppers, HttpStatus.OK)
     }
 
@@ -27,10 +28,12 @@ class HotPeppersController(private val hotPeppersRepository: HotPeppersRepositor
     fun getCount(): ResponseEntity<Long> = ResponseEntity(hotPeppersRepository.count(), HttpStatus.OK)
 
     @GetMapping("/hotpeppers/{id}")
-    fun getHotPeppers(@PathVariable id: Long): ResponseEntity<Optional<HotPeppers>> {
+    fun getHotPeppersById(@PathVariable id: Long): ResponseEntity<Optional<HotPeppers>> {
         if (hotPeppersRepository.existsById(id)){
+            System.out.println("GET HOTSAUCES BY ID: " + hotPeppersRepository.getById(id))
             return ResponseEntity(hotPeppersRepository.findById(id), HttpStatus.OK)
         } else {
+            System.out.println("HOTSAUCE NOT FOUND: $id")
             return ResponseEntity(HttpStatus.NOT_FOUND)
         }
     }
