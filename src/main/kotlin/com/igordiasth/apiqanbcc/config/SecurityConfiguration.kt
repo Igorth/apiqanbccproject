@@ -19,9 +19,6 @@ class SecurityConfiguration : WebSecurityConfigurerAdapter(){
     }
 
 
-    /**
-     * Segurança dos endpoints com autenticação básica
-     */
     @Throws(Exception::class)
     override fun configure(http: HttpSecurity) {
 

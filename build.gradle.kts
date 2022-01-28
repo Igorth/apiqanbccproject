@@ -34,6 +34,10 @@ dependencies {
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 
+	// https://mvnrepository.com/artifact/io.rest-assured/rest-assured
+	testImplementation("io.rest-assured:rest-assured:4.5.0")
+
+
 	implementation("io.springfox:springfox-swagger-ui:2.9.2")
 	implementation("io.springfox:springfox-swagger2:2.9.2")
 
@@ -53,4 +57,5 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+
 }
