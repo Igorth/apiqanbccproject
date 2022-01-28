@@ -25,3 +25,5 @@ springdoc:
   swagger-ui:
     path: /hotpeppers-endpoints
     operationsSorter: true
+jwt:
+  secret: secret

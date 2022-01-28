@@ -46,6 +46,7 @@ dependencies {
 
 	// https://mvnrepository.com/artifact/org.springframework.security/spring-security-test
 	testImplementation("org.springframework.security:spring-security-test:5.6.1")
+
 }
 
 tasks.withType<KotlinCompile> {

@@ -15,7 +15,7 @@ class SecurityConfiguration : WebSecurityConfigurerAdapter(){
     fun configureGlobal(auth: AuthenticationManagerBuilder) {
         auth
             .inMemoryAuthentication()
-            .withUser("igor").password("{noop}123").roles("USER")
+            .withUser("admin").password("{noop}123qanbcc$").roles("USER")
     }
 
 
@@ -28,6 +28,7 @@ class SecurityConfiguration : WebSecurityConfigurerAdapter(){
             .authorizeRequests()
             .antMatchers("/").permitAll()
             .antMatchers(HttpMethod.GET, "/api/**").hasRole("USER")
+            .antMatchers(HttpMethod.POST, "/api/**").hasRole("USER")
             .and()
             .csrf().disable()
             .formLogin().disable()
